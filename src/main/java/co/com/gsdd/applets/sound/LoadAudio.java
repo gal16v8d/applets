@@ -17,7 +17,6 @@ public class LoadAudio extends Applet {
 
 	public void init() {
 		Map<String, AudioClip> audioClips = new HashMap<>();
-		audioClips.put("Raining", getAudioClip(getDocumentBase(), "Raining in paradize.wav"));
 		audioClips.put("Hi", getAudioClip(getDocumentBase(), "hi.au"));
 		audioClips.put("Welcome", getAudioClip(getDocumentBase(), "welcome.wav"));
 		
@@ -39,7 +38,7 @@ public class LoadAudio extends Applet {
 		Button stop = new Button("Stop");
 		stop.addActionListener((ActionEvent e) -> currentClip.stop());
 		add(stop);
-		currentClip = audioClips.get("Raining");
+		currentClip = audioClips.get("Hi");
 	}
 
 	public void stop() {
