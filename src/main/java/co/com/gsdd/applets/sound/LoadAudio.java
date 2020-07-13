@@ -11,38 +11,38 @@ import java.util.Map;
 
 public class LoadAudio extends Applet {
 
-	private static final long serialVersionUID = -6483320475550879244L;
-	private AudioClip currentClip;
-	private Choice selectSound;
+    private static final long serialVersionUID = -6483320475550879244L;
+    private AudioClip currentClip;
+    private Choice selectSound;
 
-	public void init() {
-		Map<String, AudioClip> audioClips = new HashMap<>();
-		audioClips.put("Hi", getAudioClip(getDocumentBase(), "hi.au"));
-		audioClips.put("Welcome", getAudioClip(getDocumentBase(), "welcome.wav"));
-		
-		selectSound = new Choice();
-		audioClips.keySet().stream().forEach(key -> selectSound.add(key));
-		add(selectSound);
+    public void init() {
+        Map<String, AudioClip> audioClips = new HashMap<>();
+        audioClips.put("Hi", getAudioClip(getDocumentBase(), "hi.au"));
+        audioClips.put("Welcome", getAudioClip(getDocumentBase(), "welcome.wav"));
 
-		selectSound.addItemListener((ItemEvent e) -> {
-			currentClip.stop();
-			currentClip = audioClips.getOrDefault(selectSound.getSelectedItem(), currentClip);
-		});
+        selectSound = new Choice();
+        audioClips.keySet().stream().forEach(key -> selectSound.add(key));
+        add(selectSound);
 
-		Button play = new Button("Play");
-		play.addActionListener((ActionEvent e) -> currentClip.play());
-		add(play);
-		Button loop = new Button("Loop");
-		loop.addActionListener((ActionEvent e) -> currentClip.loop());
-		add(loop);
-		Button stop = new Button("Stop");
-		stop.addActionListener((ActionEvent e) -> currentClip.stop());
-		add(stop);
-		currentClip = audioClips.get("Hi");
-	}
+        selectSound.addItemListener((ItemEvent e) -> {
+            currentClip.stop();
+            currentClip = audioClips.getOrDefault(selectSound.getSelectedItem(), currentClip);
+        });
 
-	public void stop() {
-		currentClip.stop();
-	}
-	
+        Button play = new Button("Play");
+        play.addActionListener((ActionEvent e) -> currentClip.play());
+        add(play);
+        Button loop = new Button("Loop");
+        loop.addActionListener((ActionEvent e) -> currentClip.loop());
+        add(loop);
+        Button stop = new Button("Stop");
+        stop.addActionListener((ActionEvent e) -> currentClip.stop());
+        add(stop);
+        currentClip = audioClips.get("Hi");
+    }
+
+    public void stop() {
+        currentClip.stop();
+    }
+
 }
