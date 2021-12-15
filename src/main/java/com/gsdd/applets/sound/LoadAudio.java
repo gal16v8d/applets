@@ -13,15 +13,15 @@ public class LoadAudio extends Applet {
 
   private static final long serialVersionUID = -6483320475550879244L;
   private AudioClip currentClip;
-  private Choice selectSound;
 
+  @Override
   public void init() {
     Map<String, AudioClip> audioClips = new HashMap<>();
     audioClips.put("Hi", getAudioClip(getDocumentBase(), "hi.au"));
     audioClips.put("Welcome", getAudioClip(getDocumentBase(), "welcome.wav"));
 
-    selectSound = new Choice();
-    audioClips.keySet().stream().forEach(key -> selectSound.add(key));
+    Choice selectSound = new Choice();
+    audioClips.keySet().stream().forEach(selectSound::add);
     add(selectSound);
 
     selectSound.addItemListener((ItemEvent e) -> {
@@ -41,6 +41,7 @@ public class LoadAudio extends Applet {
     currentClip = audioClips.get("Hi");
   }
 
+  @Override
   public void stop() {
     currentClip.stop();
   }

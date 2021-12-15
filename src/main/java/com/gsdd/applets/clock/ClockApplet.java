@@ -4,7 +4,7 @@ import java.applet.Applet;
 import java.awt.Graphics;
 import java.time.Instant;
 import java.time.LocalTime;
-import java.time.ZoneOffset;
+import java.time.ZoneId;
 
 public class ClockApplet extends Applet implements Runnable {
 
@@ -43,7 +43,7 @@ public class ClockApplet extends Applet implements Runnable {
   @Override
   public void paint(Graphics g) {
     Instant instant = Instant.now();
-    LocalTime time = instant.atZone(ZoneOffset.systemDefault()).toLocalTime();
+    LocalTime time = instant.atZone(ZoneId.systemDefault()).toLocalTime();
     g.drawString(formatTime(time.getHour()) + ":" + formatTime(time.getMinute()) + ":"
         + formatTime(time.getSecond()), 10, 10);
   }
