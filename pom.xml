@@ -4,7 +4,7 @@
 
 	<groupId>com.gsdd</groupId>
 	<artifactId>applets</artifactId>
-	<version>1.0.001</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>applets</name>
@@ -22,7 +22,7 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<mvn.compiler.plugin.version>3.10.1</mvn.compiler.plugin.version>
-		<mvn.javadoc.plugin.version>3.3.2</mvn.javadoc.plugin.version>
+		<mvn.javadoc.plugin.version>3.4.1</mvn.javadoc.plugin.version>
 		<mvn.format.plugin.version>2.10.0</mvn.format.plugin.version>
 	</properties>
 
