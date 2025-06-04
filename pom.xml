@@ -21,9 +21,9 @@
 
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<mvn.compiler.plugin.version>3.11.0</mvn.compiler.plugin.version>
-		<mvn.javadoc.plugin.version>3.6.2</mvn.javadoc.plugin.version>
-		<mvn.format.plugin.version>2.10.0</mvn.format.plugin.version>
+		<mvn.compiler.plugin.version>3.14.0</mvn.compiler.plugin.version>
+		<mvn.javadoc.plugin.version>3.11.2</mvn.javadoc.plugin.version>
+		<mvn.format.plugin.version>2.26.0</mvn.format.plugin.version>
 	</properties>
 
 	<build>
